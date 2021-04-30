@@ -8,19 +8,27 @@ const App: React.FC = () => {
   // Set movies state.
   const [ movies, setMovies ] = useState<Movie[]>(MOVIES);
 
-  // Define fucntion to add a movie to state.
+  // Define function to add a movie to state.
   const addMovie = (movie: Movie) => {
     setMovies(state => {
-      state.push(movie);
-      return state;
+      return [ ...state, movie ];
     });
+  };
+
+  // Define an alphabetize sorter.
+  const alphabetize = (a: Movie, b: Movie) => {
+    return a.name.toLowerCase() === b.name.toLowerCase() ?
+      0 :
+      a.name.toLowerCase() < b.name.toLowerCase() ?
+        -1 :
+        1;
   };
 
   return (
     <div className="screenIt">
       <h1 className="screenIt__header">Screen it</h1>
       <NewMovieForm addMovie={addMovie} />
-      {movies.map((movie, i) => (
+      {movies.sort(alphabetize).map((movie, i) => (
         <MovieRow key={i} movie={movie} />
       ))}
     </div>

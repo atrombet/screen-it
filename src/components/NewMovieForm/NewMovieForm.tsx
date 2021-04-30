@@ -9,8 +9,10 @@ interface NewMovieFormProps {
   addMovie: (movie: Movie) => void
 }
 
+const initMovie: Movie = { name: '', category: '', rating: 0 };
+
 export const NewMovieForm: React.FC<NewMovieFormProps> = ({ addMovie }) => {
-  const [ newMovie, setNewMovie ] = useState<Movie>({ name: '', category: '', rating: 0 });
+  const [ newMovie, setNewMovie ] = useState<Movie>(initMovie);
 
   // Define an event handler for a name change.
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -27,8 +29,17 @@ export const NewMovieForm: React.FC<NewMovieFormProps> = ({ addMovie }) => {
     setNewMovie(state => ({ ...state, rating: value }));
   };
 
+  // Handle a form submission.
+  const formSubmit = (event: any) => {
+    event.preventDefault();
+    if (!!newMovie.name && !!newMovie.category && !!newMovie.rating) {
+      addMovie(newMovie);
+      setNewMovie(initMovie);
+    }
+  }
+
   return (
-    <form className="newMovieForm">
+    <form className="newMovieForm" onSubmit={formSubmit}>
       <div className="newMovieForm__grid">
         <div className="newMovieForm__gridRow newMovieForm__nameRow">
           <label>Name</label>
@@ -41,7 +52,7 @@ export const NewMovieForm: React.FC<NewMovieFormProps> = ({ addMovie }) => {
         <div className="newMovieForm__gridRow">
           <label>Rating</label>
           <span className="newMovieForm__ratingCell">
-            <Rating rating={0} editable={true} />
+            <Rating rating={newMovie.rating} editable={true} onRatingSelected={handleRatingChange} />
           </span>
         </div>
       </div>
