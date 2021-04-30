@@ -25,12 +25,12 @@ export const ScreenItSelect: React.FC<ScreenItSelectProps> = ({ options, selecte
   const selectChange = (event: any) => {
     const select = event.currentTarget;
     setSelectClass(select);
-    onSelect(select.selectedOptions[0]);
+    onSelect(select.selectedOptions[0].value);
   }
 
   return (
     <div className="screenItSelect">
-      <select defaultValue="" ref={selectRefCreated} onChange={selectChange}>
+      <select value={selectedOption} ref={selectRefCreated} onChange={selectChange}>
         <option className="placeholder" value="" disabled>Select a category</option>
         {options.map(option => (
           <option key={option.value} value={option.value}>{option.displayText}</option>
