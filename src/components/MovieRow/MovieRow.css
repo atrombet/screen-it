@@ -1,0 +1,18 @@
+.movieRow {
+  padding: 32px var(--large);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 64px 1fr 176px;
+  column-gap: var(--medium);
+}
+
+.movieRow__name {
+  font-weight: var(--font-weight-semi-bold);
+  margin-bottom: 6px;
+}
+
+.movieRow__category {
+  font-size: var(--small);
+  font-weight: var(--font-weight-medium);
+  color: var(--light-text);
+}

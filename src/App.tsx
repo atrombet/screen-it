@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { Movie } from './interfaces';
+import { MOVIES } from './constants';
+import { MovieRow, NewMovieForm } from './components';
 
-function App() {
+const App: React.FC = () => {
+  // Set movies state.
+  const [ movies, setMovies ] = useState<Movie[]>(MOVIES);
+
+  // Define fucntion to add a movie to state.
+  const addMovie = (movie: Movie) => {
+    setMovies(state => {
+      state.push(movie);
+      return state;
+    });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="screenIt">
+      <h1 className="screenIt__header">Screen it</h1>
+      <NewMovieForm addMovie={addMovie} />
+      {movies.map(movie => (
+        <MovieRow movie={movie} />
+      ))}
     </div>
   );
 }

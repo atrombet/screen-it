@@ -1,0 +1,50 @@
+.newMovieForm {
+  padding: var(--large);
+  border-bottom: var(--border-bottom);
+}
+
+.newMovieForm div {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  column-gap: var(--medium);
+  align-items: center;
+}
+
+.newMovieForm label {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.newMovieForm input, .newMovieForm select {
+  flex-grow: 1;
+  max-width: 437px;
+  font-size: var(--medium);
+  height: 72px;
+  padding-left: var(--medium);
+  border: 1px solid #CCCCCC;
+  border-radius: var(--border-radius);
+}
+
+.newMovieForm__nameRow {
+  margin-bottom: var(--medium);
+}
+
+.newMovieForm__categoryRow {
+  margin-bottom: var(--large);
+}
+
+.newMovieForm input::placeholder, .newMovieForm select::placeholder {
+  color: var(--light-text);
+}
+
+.newMovieForm button[type="submit"] {
+  margin-top: var(--large);
+  width: 100%;
+  font-size: var(--medium);
+  font-weight: var(--font-weight-semi-bold);
+  font-family: var(--font-family);
+  height: 72px;
+  color: white;
+  background: linear-gradient(var(--light-blue), var(--blue));
+  border: 1px solid var(--blue);
+  border-radius: var(--border-radius);
+}
