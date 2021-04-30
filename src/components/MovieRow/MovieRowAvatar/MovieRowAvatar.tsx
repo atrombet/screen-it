@@ -10,8 +10,8 @@ export const MovieRowAvatar: React.FC<MovieRowAvatarProps> = ({ movieName }) => 
   const initials = movieName
     // Split each word in the title into an array.
     .split(' ')
-    // Filter out special characters ':' and '-'.
-    .filter(word => !word.includes(':') && !word.includes('-'))
+    // Filter outthe word 'the' and special characters ':' and '-'.
+    .filter(word => !word.includes(':') && !word.includes('-') && !word.toLowerCase().includes('the'))
     // Grab the first character of each word.
     .map(word => word.charAt(0))
     // Join the array back into a string of initials.
