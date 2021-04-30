@@ -4,10 +4,15 @@
   align-items: center;
   grid-template-columns: 64px 1fr 176px;
   column-gap: var(--medium);
+  border-bottom: var(--border-bottom);
 }
 
 .movieRow__name {
   font-weight: var(--font-weight-semi-bold);
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 255px;
   margin-bottom: 6px;
 }
 

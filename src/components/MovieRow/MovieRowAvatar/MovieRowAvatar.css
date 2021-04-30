@@ -1,0 +1,13 @@
+.movieRowAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  color: white;
+  background-color: var(--blue);
+  font-size: var(--medium);
+  font-weight: var(--font-weight-semi-bold);
+  text-transform: uppercase;
+}
