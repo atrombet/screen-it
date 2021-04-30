@@ -1,6 +1,7 @@
 .screenIt {
   max-width: 1000px;
   margin: auto;
+  overflow: hidden;
 }
 
 .screenIt__header {

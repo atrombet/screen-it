@@ -20,9 +20,9 @@ export const MovieRowAvatar: React.FC<MovieRowAvatarProps> = ({ movieName }) => 
     .substring(0, 3);
 
   // Calculate font size based on number of initials.
-  const fontSize = initials.length > 2 ? '16px' :  '24px';
+  const className = initials.length > 2 ? 'movieRowAvatar movieRowAvatar__smallText' :  'movieRowAvatar movieRowAvatar__mediumText';
 
   return (
-    <div className="movieRowAvatar" style={{ fontSize: fontSize }}>{ initials }</div>
+    <div className={className}>{ initials }</div>
   );
 };

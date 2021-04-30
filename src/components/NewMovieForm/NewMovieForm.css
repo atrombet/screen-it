@@ -16,10 +16,8 @@
 
 .newMovieForm input {
   font-family: var(--font-family);
-  flex-grow: 1;
-  max-width: 437px;
   font-size: var(--medium);
-  height: 72px;
+  height: var(--input-height);
   padding-left: var(--medium);
   border: 1px solid #CCCCCC;
   border-radius: var(--border-radius);
@@ -47,7 +45,7 @@
   font-size: var(--medium);
   font-weight: var(--font-weight-semi-bold);
   font-family: var(--font-family);
-  height: 72px;
+  height: var(--input-height);
   color: white;
   background: linear-gradient(var(--light-blue), var(--blue));
   border: 1px solid var(--blue);

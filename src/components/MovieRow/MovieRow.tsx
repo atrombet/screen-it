@@ -13,11 +13,13 @@ export const MovieRow: React.FC<MovieRowProps> = ({ movie }) => {
   return (
     <div className="movieRow">
       <MovieRowAvatar movieName={movie.name} />
-      <div>
+      <div className="movieRow__details">
         <div className="movieRow__name">{ movie.name }</div>
         <div className="movieRow__category">{ CATEGORIES[movie.category].displayText }</div>
       </div>
-      <Rating rating={movie.rating} editable={true} />
+      <div className="movieRow__rating">
+        <Rating rating={movie.rating} editable={true} />
+      </div>
     </div>
   );
 };

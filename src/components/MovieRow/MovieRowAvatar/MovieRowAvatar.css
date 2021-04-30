@@ -2,12 +2,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 64px;
-  width: 64px;
+  height: var(--avatar-size);
+  width: var(--avatar-size);
   border-radius: 50%;
   color: white;
   background-color: var(--blue);
-  font-size: var(--medium);
   font-weight: var(--font-weight-semi-bold);
   text-transform: uppercase;
+}
+
+.movieRowAvatar__mediumText {
+  font-size: var(--medium);
+}
+
+.movieRowAvatar__smallText {
+  font-size: var(--small);
 }

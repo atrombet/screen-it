@@ -2,9 +2,13 @@
   padding: 32px var(--large);
   display: grid;
   align-items: center;
-  grid-template-columns: 64px 1fr 176px;
+  grid-template-columns: var(--avatar-size) 1fr calc(var(--icon-size) * 5);
   column-gap: var(--medium);
   border-bottom: var(--border-bottom);
+}
+
+.movieRow__details {
+  max-width: 45vw;
 }
 
 .movieRow__name {
@@ -12,7 +16,6 @@
   overflow-x: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 255px;
   margin-bottom: 6px;
 }
 
@@ -20,4 +23,8 @@
   font-size: var(--small);
   font-weight: var(--font-weight-medium);
   color: var(--light-text);
+}
+
+.movieRow__rating {
+  justify-self: end;
 }
