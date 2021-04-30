@@ -3,7 +3,7 @@
   border-bottom: var(--border-bottom);
 }
 
-.newMovieForm__grid div {
+.newMovieForm__gridRow {
   display: grid;
   grid-template-columns: 1fr 4fr;
   column-gap: var(--medium);
@@ -14,7 +14,7 @@
   font-weight: var(--font-weight-semi-bold);
 }
 
-.newMovieForm input, .newMovieForm select {
+.newMovieForm input {
   font-family: var(--font-family);
   flex-grow: 1;
   max-width: 437px;
@@ -37,7 +37,7 @@
   justify-self: end;
 }
 
-.newMovieForm input::placeholder, .newMovieForm select::placeholder {
+.newMovieForm input::placeholder {
   color: var(--light-text);
 }
 
