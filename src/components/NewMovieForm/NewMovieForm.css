@@ -15,6 +15,7 @@
 }
 
 .newMovieForm input, .newMovieForm select {
+  font-family: var(--font-family);
   flex-grow: 1;
   max-width: 437px;
   font-size: var(--medium);

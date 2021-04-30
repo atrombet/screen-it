@@ -1,20 +1,13 @@
 import React from 'react';
 import { Movie } from '../../interfaces';
 import './NewMovieForm.css';
-import { Category } from '../../enums';
 import { Rating } from '../Rating/Rating';
-
+import { CATEGORIES } from '../../constants';
 interface NewMovieFormProps {
   addMovie: (movie: Movie) => void
 }
 
 export const NewMovieForm: React.FC<NewMovieFormProps> = ({ addMovie }) => {
-  // Create category options from the enum.
-  const options = [];
-  for (const value in Category) {
-    options.push(<option key={value} value={value}>{value}</option>);
-  }
-
   return (
     <form className="newMovieForm">
       <div className="newMovieForm__grid">
@@ -25,8 +18,10 @@ export const NewMovieForm: React.FC<NewMovieFormProps> = ({ addMovie }) => {
         <div className="newMovieForm__categoryRow">
           <label>Category</label>
           <select>
-            <option value="" disabled selected>Select a category</option>
-            {options}
+            <option value="" disabled>Select a category</option>
+            {Object.keys(CATEGORIES).map(key => (
+              <option key={key} value={CATEGORIES[key].value}>{CATEGORIES[key].displayText}</option>
+            ))}
           </select>
         </div>
         <div>

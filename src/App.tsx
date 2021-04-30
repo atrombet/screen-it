@@ -20,8 +20,8 @@ const App: React.FC = () => {
     <div className="screenIt">
       <h1 className="screenIt__header">Screen it</h1>
       <NewMovieForm addMovie={addMovie} />
-      {movies.map(movie => (
-        <MovieRow movie={movie} />
+      {movies.map((movie, i) => (
+        <MovieRow key={i} movie={movie} />
       ))}
     </div>
   );

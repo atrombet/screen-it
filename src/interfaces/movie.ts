@@ -1,7 +1,5 @@
-import { Category } from '../enums';
-
 export interface Movie {
   name: string;
-  category: Category;
+  category: string;
   rating: number;
 }
